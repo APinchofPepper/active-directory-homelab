@@ -74,22 +74,22 @@ All required screenshots were captured and stored for uploading to GitHub.
 
 ### Server Manager Home
 
-![](C:/Users/jack/OneDrive/Desktop/Projects/active-directory-homelab/Day1_Screenshots/01_ServerManager_Home.png)
+![](../Day1_Screenshots/01_ServerManager_Home.png)
 
 ### AD DS Roles Installed
 
-![](C:/Users/jack/OneDrive/Desktop/Projects/active-directory-homelab/Day1_Screenshots/02_ADDS_Roles_Installed.png)
+![](../Day1_Screenshots/02_ADDS_Roles_Installed.png)
 
 ### DNS Server Roles Installed
 
-![](C:/Users/jack/OneDrive/Desktop/Projects/active-directory-homelab/Day1_Screenshots/03_DNS_Roles_Installed.png)
+![](../Day1_Screenshots/03_DNS_Roles_Installed.png)
 
 ### DC1 System Information
 
-![](C:/Users/jack/OneDrive/Desktop/Projects/active-directory-homelab/Day1_Screenshots/04_DC1_SystemInfo.png)
+![](../Day1_Screenshots/04_DC1_SystemInfo.png)
 
 ### Static IP Configuration
 
-![](C:/Users/jack/OneDrive/Desktop/Projects/active-directory-homelab/Day1_Screenshots/05_StaticIP_Config.png)
+![](../Day1_Screenshots/05_StaticIP_Config.png)
 
 
