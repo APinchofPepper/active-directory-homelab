@@ -229,4 +229,153 @@ The script was placed in `C:\scripts\` along with the `users.csv` file, and exec
 
 ![](../Day2_Screenshots/05_Individual_User_Properties.png)
 
+---
+
+# Active Directory Home Lab — Setup Guide (Day 3)
+
+## Overview
+
+This document explains what was completed on Day 3 of setting up the Active Directory home lab. Day 3 focused on Group Policy configuration, creating and linking GPOs to enforce security policies and organizational standards across the domain.
+
+---
+
+## What Was Built
+
+### Group Policy Objects (GPOs)
+
+Multiple Group Policy Objects were created to enforce security policies, user experience settings, and organizational standards. These GPOs were linked to appropriate Organizational Units to apply policies to specific groups of users and computers.
+
+The following GPOs were created:
+
+* Password Policy — Enforces strong password requirements at the domain level
+* Screen Lock Policy — Automatically locks workstations after user inactivity
+* Block USB Storage — Prevents unauthorized use of USB storage devices
+* Desktop Wallpaper — Applies a corporate wallpaper to user desktops
+
+---
+
+## Day 3 Summary
+
+Below is a clear outline of everything completed on the third day.
+
+### 1. Opened Group Policy Management Console
+
+* Opened Group Policy Management from the Start Menu
+* Navigated to the domain structure
+* Prepared to create and manage GPOs
+
+The Group Policy Management Console is the central tool for creating, editing, and linking Group Policy Objects in Active Directory.
+
+### 2. Created Password Policy GPO
+
+* Created a new GPO named "Password Policy"
+* Linked it at the domain level (required for account policies)
+* Configured minimum password length: 8 characters
+* Enabled password complexity requirements
+* Set maximum password age: 60 days
+* Set minimum password age: 1 day
+
+Password policies must be linked at the domain level because Account Policies only apply at the domain root in Active Directory.
+
+### 3. Created Screen Lock Policy GPO
+
+* Created a new GPO named "Screen Lock Policy"
+* Set screen saver timeout: 600 seconds (10 minutes)
+* Enabled password protect the screen saver
+* Enabled force specific screen saver
+
+This policy ensures workstations automatically lock after 10 minutes of inactivity, protecting against unauthorized access.
+
+### 4. Created Block USB Storage GPO
+
+* Created a new GPO named "Block USB Storage"
+* Navigated to Removable Storage Access policies
+* Enabled "Removable Disks: Deny read access"
+* Enabled "Removable Disks: Deny write access"
+
+This security policy prevents data theft and unauthorized data transfer via USB storage devices.
+
+### 5. Created Desktop Wallpaper GPO
+
+* Created a new GPO named "Desktop Wallpaper"
+* Enabled desktop wallpaper policy
+* Set wallpaper path: C:\Wallpaper\corpwallpaper.jpg
+* Set style: Fill
+
+This optional GPO provides a visual confirmation that Group Policy is working correctly and maintains a consistent corporate appearance.
+
+### 6. Linked GPOs to Organizational Units
+
+* Linked Screen Lock Policy and Block USB Storage to IT OU
+* Linked Password Policy to HR OU
+* Linked Screen Lock Policy and Password Policy to Operations OU
+* Linked Desktop Wallpaper to Executives OU
+
+GPOs were strategically linked to OUs to apply policies where they are most needed. Password Policy was linked at the domain level as required.
+
+### 7. Forced Policy Update
+
+* Ran `gpupdate /force` on the server
+* Executed the command to immediately apply all Group Policy changes
+* Verified the command completed successfully
+
+The `gpupdate /force` command forces an immediate refresh of all Group Policy settings, bypassing the normal refresh interval.
+
+### 8. Verified Policy Application
+
+* Ran `gpresult /r` to view applied Group Policy Objects
+* Verified that all created GPOs were listed in the Applied Group Policy Objects section
+* Confirmed policies were successfully applied to the system
+
+This verification step proves that the GPOs are active and being enforced on the domain controller.
+
+### 9. Took Documentation Screenshots
+
+All required screenshots were captured and stored for uploading to GitHub.
+
+---
+
+## Group Policy Configuration Details
+
+The Group Policy Objects created on Day 3 perform the following operations:
+
+* Password Policy GPO enforces strong password requirements including minimum length of 8 characters, complexity requirements, maximum age of 60 days, and minimum age of 1 day
+* Screen Lock Policy GPO configures automatic workstation lock after 10 minutes of inactivity with password protection
+* Block USB Storage GPO prevents read and write access to removable disk devices
+* Desktop Wallpaper GPO applies a corporate wallpaper image to user desktops for consistent branding
+
+Password Policy must be linked at the domain level, as Account Policies can only be applied at the domain root in Active Directory. The other GPOs were linked to specific Organizational Units to apply policies where they are most needed.
+
+---
+
+## Screenshots
+
+### Password Policy GPO
+
+![](../Day3_Screenshots/01_PasswordPolicy_GPO.png)
+
+### Screen Lock Policy
+
+![](../Day3_Screenshots/02_ScreenLock_Policy.png)
+
+### Block USB Storage GPO
+
+![](../Day3_Screenshots/03_BlockUSB_Storage.png)
+
+### Desktop Wallpaper GPO
+
+![](../Day3_Screenshots/04_Desktop_Wallpaper.png)
+
+### Linked GPOs to OUs
+
+![](../Day3_Screenshots/05_Linked_GPOs.png)
+
+### GPUpdate Output
+
+![](../Day3_Screenshots/06_GPUpdate_Output.png)
+
+### Applied Group Policy Objects
+
+![](../Day3_Screenshots/07_Applied_GroupPolicy_Objects.png)
+
 
